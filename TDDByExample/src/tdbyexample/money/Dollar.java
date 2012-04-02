@@ -10,6 +10,13 @@ package tdbyexample.money;
  */
 public class Dollar {
     int amount;
+    
+    public boolean equals(Object boo){
+        Dollar dollar= (Dollar) boo;
+        return amount == dollar.amount;
+      
+    }
+    
     Dollar(int amount){this.amount= amount;}
     Dollar times(int multiplier) {
     return new Dollar(amount*multiplier);

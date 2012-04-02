@@ -28,4 +28,11 @@ public class MoneyTest {
          assertTrue(new Dollar(4).equals(new Dollar(4)));
      }
      
+     @Test
+     public void testFrancMulitplication(){
+         Franc five = new Franc(5);
+         assertEquals(new Franc(10), five.times(2));
+         assertEquals(new Franc(15), five.times(3));
+     }
+     
 }

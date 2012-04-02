@@ -8,17 +8,19 @@ package tdbyexample.money;
  *
  * @author nvaidyan
  */
-public class Dollar {
+public class Franc {
+    
     private int amount;
     
     public boolean equals(Object object){
-        Dollar dollar= (Dollar) object;
-        return amount == dollar.amount;
+        Franc franc= (Franc) object;
+        return amount == franc.amount;
       
     }
     
-    Dollar(int amount){this.amount= amount;}
-    Dollar times(int multiplier) {
-        return new Dollar(amount*multiplier);
+    Franc(int amount){this.amount= amount;}
+    Franc times(int multiplier) {
+        return new Franc(amount*multiplier);
     }
+    
 }

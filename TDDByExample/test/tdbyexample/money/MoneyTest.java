@@ -76,17 +76,22 @@ public class MoneyTest {
      }
      
      @Test
-     public void testmultiplicationUpdated(){ 
+     public void testMultiplicationUpdated(){ 
          assertEquals(Money.dollar(10), (Money.dollar(5)).times(2));
          assertEquals(Money.franc(10), (Money.franc(5)).times(2));
 
      }
      
      @Test
-     public void testEqualityUpdated(){
+     public void testNumericalEqualityUpdated(){
          assertTrue(Money.dollar(8).equals(Money.dollar(8)));
          assertFalse(Money.dollar(4).equals(Money.dollar(2)));
          assertTrue(Money.franc(8).equals(Money.franc(8)));
          assertFalse(Money.franc(4).equals(Money.franc(2)));
+     }
+     
+     @Test
+     public void testDifferentClassEquality(){
+         assertTrue(new Money(10, "CHF").equals(new Franc(10, "CHF")));
      }
 }

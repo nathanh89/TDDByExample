@@ -7,21 +7,27 @@ package tdbyexample.money;
  *
  * @author nvaidyan
  */
-abstract class Money {
+class Money {
     
     protected int amount;
     
     protected String currency;
     
+    public String toString(){
+        return amount + " " + currency;
+    }
+    
     Money(int amount, String currency){
         this.amount = amount;
         this.currency = currency;
     }
-    
-    abstract Money times(int amount);
-            
+                
     String currency(){
         return currency;
+    }
+    
+    Money times(int multiplier){
+        return new Money(amount * multiplier, currency);
     }
     
     static Money dollar(int amount){
@@ -35,7 +41,7 @@ abstract class Money {
     public boolean equals(Object object){
         Money money= (Money) object;
         return amount == money.amount
-            && getClass().equals(money.getClass());
+            && currency().equals(money.currency());
     }
     
   

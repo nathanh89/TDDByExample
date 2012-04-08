@@ -4,7 +4,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 public class MoneyTest {
     
-     @Test
+   /*  @Test
      public void testMultiplication() {
          Dollar five= new Dollar(5);
          assertEquals(new Dollar(10), five.times(2));
@@ -68,6 +68,11 @@ public class MoneyTest {
          assertFalse(new Franc(5).equals(Money.dollar(5)));
          
      }
-    
+    */
+     @Test
+     public void testCurrencyIndicator(){
+         assertEquals("USD", Money.dollar(1).currency());
+         assertEquals("CHF", Money.franc(1).currency());
+     }
      
 }

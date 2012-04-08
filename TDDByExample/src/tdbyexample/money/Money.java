@@ -11,7 +11,7 @@ abstract class Money {
     
     protected int amount;
     
-    Money times(int multiplier);
+    abstract Money times(int multiplier);
     
     static Money dollar(int amount){
         return new Dollar(amount);

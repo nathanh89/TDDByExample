@@ -10,4 +10,6 @@ package tdbyexample.money;
  */
 public interface Expression {
     
+    Money reduce(String to);
+    
 }

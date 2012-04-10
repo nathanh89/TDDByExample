@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package tdbyexample.money;
+package tddbyexample.money;
 /**
  *
  * @author nvaidyan
@@ -35,11 +35,11 @@ class Money implements Expression{
         return new Money(amount / rate, to);
     }
     
-    Money times(int multiplier){
+    Expression times(int multiplier){
         return new Money(amount * multiplier, currency);
     }
     
-    Expression plus(Money addend){
+    public Expression plus(Expression addend){
         return new Sum(this, addend);
     }
     

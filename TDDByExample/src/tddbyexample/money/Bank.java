@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package tdbyexample.money;
+package tddbyexample.money;
 import java.util.Hashtable;
 
 /**
@@ -23,7 +23,7 @@ public class Bank {
         return source.reduce(this, to);
     }
     
-    void addrate(String from, String to, int rate){
+    void addRate(String from, String to, int rate){
         rates.put(new Pair(from, to), new Integer(rate));
     }
     private class Pair {

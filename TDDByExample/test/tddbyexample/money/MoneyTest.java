@@ -1,5 +1,9 @@
-package tdbyexample.money;
+package tddbyexample.money;
 
+import tddbyexample.money.Sum;
+import tddbyexample.money.Bank;
+import tddbyexample.money.Expression;
+import tddbyexample.money.Money;
 import org.junit.Test;
 import static org.junit.Assert.*;
 public class MoneyTest {
@@ -65,7 +69,7 @@ public class MoneyTest {
      @Test
      public void testReduceMoneyDifferentCurrency(){
          Bank bank = new Bank();
-         bank.addrate("CHF", "USD", 2);
+         bank.addRate("CHF", "USD", 2);
          Money result = bank.reduce(Money.franc(2), "USD");
          assertEquals(Money.dollar(1), result);
      }
@@ -73,5 +77,15 @@ public class MoneyTest {
      @Test
      public void  testIdentityRate(){
          assertEquals(1, new Bank().rate("USD", "USD"));
+     }
+     
+     @Test
+     public void testMixedAddition(){
+         Expression fiveBucks = Money.dollar(5);
+         Expression tenFrancs = Money.franc(10);
+         Bank bank = new Bank();
+         bank.addRate("CHF", "USD", 2);
+         Money result = bank.reduce(fiveBucks.plus(tenFrancs), "USD");
+         assertEquals(Money.dollar(10), result);
      }
 }

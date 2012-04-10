@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package tdbyexample.money;
+package tddbyexample.money;
 
 /**
  *
@@ -11,5 +11,7 @@ package tdbyexample.money;
 public interface Expression {
     
     Money reduce(Bank bank, String to);
+    
+    Expression plus(Expression addend);
     
 }
